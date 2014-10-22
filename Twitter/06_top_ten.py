@@ -8,7 +8,6 @@ Compute the ten most frequently occurring hashtags from the data you gathered in
 counts = {}  # Counts of individual terms in all tweets
 
 def hw(tweet_file):
-    global total_terms
     for line in tweet_file:
         tweet = json.loads(line)
         if 'entities' in tweet and tweet['entities']['hashtags']:

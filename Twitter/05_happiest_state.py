@@ -136,7 +136,6 @@ def scores_read(sentiment_file):
 
 
 def hw(tweet_file):
-    global total_terms
     for line in tweet_file:
         tweet = json.loads(line)
         if 'place' in tweet and tweet['place'] and tweet['place']['country_code'] == 'US':
@@ -168,7 +167,7 @@ def print_output():
 def main():
     sentiment_file = open(sys.argv[1])
     tweet_file = open(sys.argv[2])
-    scores = scores_read(sentiment_file)
+    scores_read(sentiment_file)
     hw(tweet_file)
     print_output()
 
